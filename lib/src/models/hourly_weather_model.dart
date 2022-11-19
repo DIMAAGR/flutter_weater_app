@@ -1,9 +1,8 @@
-import 'package:flutter_weater_app/src/controllers/weather_model.dart';
+import 'package:flutter_weater_app/src/models/rain_weather_model.dart';
+import 'package:flutter_weater_app/src/models/weather_model.dart';
 
-class Current {
+class Hourly {
   int? dt;
-  int? sunrise;
-  int? sunset;
   double? temp;
   double? feelsLike;
   int? pressure;
@@ -16,28 +15,14 @@ class Current {
   int? windDeg;
   double? windGust;
   List<Weather>? weather;
+  double? pop;
+  Rain? rain;
 
-  Current(
-      {this.dt,
-      this.sunrise,
-      this.sunset,
-      this.temp,
-      this.feelsLike,
-      this.pressure,
-      this.humidity,
-      this.dewPoint,
-      this.uvi,
-      this.clouds,
-      this.visibility,
-      this.windSpeed,
-      this.windDeg,
-      this.windGust,
-      this.weather});
+  Hourly(
+      {this.dt, this.temp, this.feelsLike, this.pressure, this.humidity, this.dewPoint, this.uvi, this.clouds, this.visibility, this.windSpeed, this.windDeg, this.windGust, this.weather, this.pop, this.rain});
 
-  Current.fromJson(Map<String, dynamic> json) {
+  Hourly.fromJson(Map<String, dynamic> json) {
     dt = json['dt'];
-    sunrise = json['sunrise'];
-    sunset = json['sunset'];
     temp = json['temp'];
     feelsLike = json['feels_like'];
     pressure = json['pressure'];
@@ -55,13 +40,13 @@ class Current {
         weather!.add(Weather.fromJson(v));
       });
     }
+    pop = json['pop'];
+    rain = json['rain'] != null ? Rain.fromJson(json['rain']) : null;
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['dt'] = dt;
-    data['sunrise'] = sunrise;
-    data['sunset'] = sunset;
     data['temp'] = temp;
     data['feels_like'] = feelsLike;
     data['pressure'] = pressure;
@@ -75,6 +60,10 @@ class Current {
     data['wind_gust'] = windGust;
     if (weather != null) {
       data['weather'] = weather!.map((v) => v.toJson()).toList();
+    }
+    data['pop'] = pop;
+    if (rain != null) {
+      data['rain'] = rain!.toJson();
     }
     return data;
   }

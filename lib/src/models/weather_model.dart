@@ -1,8 +1,8 @@
-import 'package:flutter_weater_app/src/controllers/alerts__weather_model.dart';
-import 'package:flutter_weater_app/src/controllers/current_weather_model.dart';
-import 'package:flutter_weater_app/src/controllers/daily_weather_model.dart';
-import 'package:flutter_weater_app/src/controllers/hourly_weather_model.dart';
-import 'package:flutter_weater_app/src/controllers/minutely_weather_model.dart';
+import 'package:flutter_weater_app/src/models/alerts__weather_model.dart';
+import 'package:flutter_weater_app/src/models/current_weather_model.dart';
+import 'package:flutter_weater_app/src/models/daily_weather_model.dart';
+import 'package:flutter_weater_app/src/models/hourly_weather_model.dart';
+import 'package:flutter_weater_app/src/models/minutely_weather_model.dart';
 
 class WeatherModel {
   double? lat;

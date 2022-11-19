@@ -1,6 +1,6 @@
-import 'package:flutter_weater_app/src/controllers/feels_like_weather_model.dart';
-import 'package:flutter_weater_app/src/controllers/temp_weather_model.dart';
-import 'package:flutter_weater_app/src/controllers/weather_model.dart';
+import 'package:flutter_weater_app/src/models/feels_like_weather_model.dart';
+import 'package:flutter_weater_app/src/models/temp_weather_model.dart';
+import 'package:flutter_weater_app/src/models/weather_model.dart';
 
 class Daily {
   int? dt;
