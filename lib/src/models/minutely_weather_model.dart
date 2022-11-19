@@ -1,12 +1,12 @@
 class Minutely {
-  int? dt;
-  int? precipitation;
+  double? dt;
+  double? precipitation;
 
   Minutely({this.dt, this.precipitation});
 
   Minutely.fromJson(Map<String, dynamic> json) {
-    dt = json['dt'];
-    precipitation = json['precipitation'];
+    dt = double.parse(json['dt'].toString());
+    precipitation = double.parse(json['precipitation'].toString());
   }
 
   Map<String, dynamic> toJson() {

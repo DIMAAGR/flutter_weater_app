@@ -1,3 +1,7 @@
+import 'dart:developer';
+
+import 'package:flutter_weater_app/src/models/weather_model.dart';
+import 'package:flutter_weater_app/src/repositories/repository/fetch_weather_data.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 
@@ -18,6 +22,8 @@ class GlobalController extends GetxController {
   final RxDouble _latitude = 0.0.obs;
   final RxDouble _longitude = 0.0.obs;
 
+  final Rx<WeatherModel> _weatherModel = WeatherModel().obs;
+
   // ===========================================================================
   // Create instances for them to be called
   // ===========================================================================
@@ -25,6 +31,7 @@ class GlobalController extends GetxController {
   RxBool checkIsLoading() => _isLoading;
   RxDouble getLatitude() => _latitude;
   RxDouble getLongitude() => _longitude;
+  Rx<WeatherModel> getWeatherModel() => _weatherModel;
 
   // Dentro do Getx podemos adicionar ao controller funções de init e close.
 
@@ -34,11 +41,12 @@ class GlobalController extends GetxController {
 
   // it's similar to initState
   @override
-  void onInit() {
+  void onInit() async {
     //
 
     if (_isLoading.isTrue) {
-      getLocation();
+      await getLocation();
+      await getWeatherApiData();
     }
 
     super.onInit();
@@ -58,7 +66,7 @@ class GlobalController extends GetxController {
   // Methods
   // ===========================================================================
 
-  getLocation() async {
+  Future<void> getLocation() async {
     //
 
     bool isServiceEnabled;
@@ -102,6 +110,14 @@ class GlobalController extends GetxController {
       _isLoading.value = false;
     });
 
+    //
+  }
+
+  Future<void> getWeatherApiData() async {
+    //
+    _isLoading.value = true;
+    _weatherModel.value = await FetchWeatherData().getWeatherData(lat: _latitude.value, lon: _longitude.value);
+    _isLoading.value = false;
     //
   }
 }

@@ -9,7 +9,7 @@ class Temp {
   Temp({this.day, this.min, this.max, this.night, this.eve, this.morn});
 
   Temp.fromJson(Map<String, dynamic> json) {
-    day = json['day'];
+    day = double.parse(json['day'].toString());
     min = json['min'];
     max = json['max'];
     night = json['night'];

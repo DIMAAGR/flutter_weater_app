@@ -50,7 +50,7 @@ class Daily {
     sunset = json['sunset'];
     moonrise = json['moonrise'];
     moonset = json['moonset'];
-    moonPhase = json['moon_phase'];
+    moonPhase = double.parse(json['moon_phase'].toString());
     temp = json['temp'] != null ? Temp.fromJson(json['temp']) : null;
     feelsLike = json['feels_like'] != null ? FeelsLike.fromJson(json['feels_like']) : null;
     pressure = json['pressure'];
@@ -68,7 +68,7 @@ class Daily {
     clouds = json['clouds'];
     pop = json['pop'];
     rain = json['rain'];
-    uvi = json['uvi'];
+    uvi = double.parse(json['uvi'].toString());
   }
 
   Map<String, dynamic> toJson() {

@@ -27,20 +27,20 @@ class Hourly {
     feelsLike = json['feels_like'];
     pressure = json['pressure'];
     humidity = json['humidity'];
-    dewPoint = json['dew_point'];
-    uvi = json['uvi'];
+    dewPoint = double.parse(json['dew_point'].toString());
+    uvi = double.parse(json['uvi'].toString());
     clouds = json['clouds'];
     visibility = json['visibility'];
     windSpeed = json['wind_speed'];
     windDeg = json['wind_deg'];
-    windGust = json['wind_gust'];
+    windGust = double.parse(json['wind_gust'].toString());
     if (json['weather'] != null) {
       weather = <Weather>[];
       json['weather'].forEach((v) {
         weather!.add(Weather.fromJson(v));
       });
     }
-    pop = json['pop'];
+    pop = double.parse(json['pop'].toString());
     rain = json['rain'] != null ? Rain.fromJson(json['rain']) : null;
   }
 
