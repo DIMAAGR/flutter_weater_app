@@ -11,6 +11,16 @@ Projeto criado para enriquecer o portifólio e aprender novas features. O respec
  - Route Management.
 
 ------------------------
+ ### Pacotes Utilizados nesse projeto
+ 
+ - GeoLocator
+ - GeoCoding
+ - GetX
+ - http
+ - Sleek Circular Slider
+ - Google Fonts
+ 
+------------------------
 
 ### Sobre o GetX
 

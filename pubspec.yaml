@@ -1,4 +1,3 @@
-
 # Project Descripton
 
 name: flutter_weater_app
@@ -10,19 +9,23 @@ version: 1.0.0+1
 environment:
   sdk: '>=2.18.2 <3.0.0'
 
-
 # Projects Dependencies
 dependencies:
-  flutter: # FLUTTER SDK:
+  cupertino_icons: ^1.0.2
+  flutter:
     sdk: flutter
-
-  cupertino_icons: ^1.0.2 # Ios Icons
+  geocoding: ^2.0.5
+  geolocator: ^9.0.2
+  get: ^4.6.5
+  google_fonts: ^3.0.1
+  http: ^0.13.5
+  sleek_circular_slider: ^2.0.1
 
 dev_dependencies:
+
+  flutter_lints: ^2.0.0 # Lints
   flutter_test:
     sdk: flutter
-    
-  flutter_lints: ^2.0.0 # Lints
 
 flutter:
   uses-material-design: true
@@ -31,7 +34,6 @@ flutter:
   assets:
     - assets/icons/
     - assets/weather/
-
   # fonts:
   #   - family: Schyler
   #     fonts:
