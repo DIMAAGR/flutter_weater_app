@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:ffi';
 
 import 'package:flutter_weater_app/src/core/constants.dart';
 import 'package:flutter_weater_app/src/core/services/networking_service.dart';
@@ -12,7 +11,7 @@ class FetchWeatherData extends IFetchWeatherData {
 
   @override
   Future<WeatherModel> getWeatherData({required double lat, required double lon}) async {
-    http.Response response = await networking.get(path: '?lat=$lat&lon=$lon&appid=${Const.apiKey}');
+    http.Response response = await networking.get(path: '?lat=$lat&lon=$lon&appid=${Const.apiKey}&units=metric&lang=pt_br');
 
     return WeatherModel.fromJson(jsonDecode(response.body));
   }

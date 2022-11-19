@@ -10,11 +10,11 @@ class Temp {
 
   Temp.fromJson(Map<String, dynamic> json) {
     day = double.parse(json['day'].toString());
-    min = json['min'];
-    max = json['max'];
-    night = json['night'];
-    eve = json['eve'];
-    morn = json['morn'];
+    min = double.parse(json['min'].toString());
+    max = double.parse(json['max'].toString());
+    night = double.parse(json['night'].toString());
+    eve = double.parse(json['eve'].toString());
+    morn = double.parse(json['morn'].toString());
   }
 
   Map<String, dynamic> toJson() {

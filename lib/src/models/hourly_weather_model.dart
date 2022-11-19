@@ -24,7 +24,7 @@ class Hourly {
   Hourly.fromJson(Map<String, dynamic> json) {
     dt = json['dt'];
     temp = json['temp'];
-    feelsLike = json['feels_like'];
+    feelsLike = double.parse(json['feels_like'].toString());
     pressure = json['pressure'];
     humidity = json['humidity'];
     dewPoint = double.parse(json['dew_point'].toString());
