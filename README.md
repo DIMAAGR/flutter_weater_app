@@ -11,3 +11,7 @@ Projeto criado para enriquecer o portifólio e aprender novas features. O respec
  - Route Management.
 
 ------------------------
+
+### Sobre o GetX
+
+GetX é a única estrutura de gerenciamento de estado que combina gerenciamento de rota e injeção de dependência juntos.
