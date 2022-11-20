@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_weater_app/src/controllers/global_controller.dart';
-import 'package:flutter_weater_app/src/core/helpers/helpers.dart';
-import 'package:flutter_weater_app/src/core/theme/theme_data.dart';
 import 'package:flutter_weater_app/src/models/weather_model.dart';
+import 'package:flutter_weater_app/src/view/home/components/hourly_weather_button.dart';
 import 'package:get/get.dart';
 
 class HomeHourlyWeatherWidget extends StatelessWidget {
@@ -41,30 +40,11 @@ class HomeHourlyWeatherWidget extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: model.hourly!.length > 12 ? 12 : model.hourly!.length,
         itemBuilder: (_, index) => Obx(
-          () => GestureDetector(
+          () => HourlyWeatherButtonWidget(
             onTap: () => this.index.value = index,
-            child: Container(
-              width: 90,
-              margin: const EdgeInsets.only(left: 20, right: 5),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                boxShadow: [
-                  BoxShadow(
-                    offset: const Offset(0.5, 0),
-                    blurRadius: 30,
-                    spreadRadius: 1,
-                    color: AppTheme.colors.dividerLine.withAlpha(150),
-                  )
-                ],
-                gradient: this.index.value == index
-                    ? LinearGradient(colors: [
-                        AppTheme.colors.firstGradientColor,
-                        AppTheme.colors.secondGradientColor,
-                      ])
-                    : null,
-              ),
-              child: _hourlyDetails(index: index),
-            ),
+            isSelected: this.index.value == index,
+            model: model,
+            index: index,
           ),
         ),
       ),
@@ -72,36 +52,8 @@ class HomeHourlyWeatherWidget extends StatelessWidget {
   }
 
   // ===========================================================================
-  // Hourly Details Widet
+  // Build Method
   // ===========================================================================
-  Widget _hourlyDetails({required int index}) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        Container(
-          margin: const EdgeInsets.only(top: 10),
-          child: Text(
-            Helpers.convertTimestampToHumanDate(model.hourly![index].dt!),
-            style: TextStyle(color: this.index.value == index ? Colors.white : AppTheme.colors.textColorBlack),
-          ),
-        ),
-        Container(
-          width: 40,
-          height: 40,
-          margin: const EdgeInsets.all(5),
-          child: Image.asset('assets/weather/${model.hourly![index].weather![0].icon!}.png'),
-        ),
-        Container(
-          margin: const EdgeInsets.all(10),
-          child: Text(
-            '${model.hourly![index].temp!.round()}°',
-            style: TextStyle(color: this.index.value == index ? Colors.white : AppTheme.colors.textColorBlack),
-          ),
-        )
-      ],
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Column(
