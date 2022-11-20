@@ -1,3 +1,4 @@
+import 'package:flutter_weater_app/src/core/helpers/helpers.dart';
 import 'package:flutter_weater_app/src/models/rain_weather_model.dart';
 import 'package:flutter_weater_app/src/models/weather_model.dart';
 
@@ -23,24 +24,24 @@ class Hourly {
 
   Hourly.fromJson(Map<String, dynamic> json) {
     dt = json['dt'];
-    temp = json['temp'];
-    feelsLike = double.parse(json['feels_like'].toString());
+    temp = Helpers.doubleParser(json['temp']);
+    feelsLike = Helpers.doubleParser(json['feels_like']);
     pressure = json['pressure'];
     humidity = json['humidity'];
-    dewPoint = double.parse(json['dew_point'].toString());
-    uvi = double.parse(json['uvi'].toString());
+    dewPoint = Helpers.doubleParser(json['dew_point']);
+    uvi = Helpers.doubleParser(json['uvi']);
     clouds = json['clouds'];
     visibility = json['visibility'];
-    windSpeed = json['wind_speed'];
+    windSpeed = Helpers.doubleParser(json['wind_speed']);
     windDeg = json['wind_deg'];
-    windGust = double.parse(json['wind_gust'].toString());
+    windGust = Helpers.doubleParser(json['wind_gust']);
     if (json['weather'] != null) {
       weather = <Weather>[];
       json['weather'].forEach((v) {
         weather!.add(Weather.fromJson(v));
       });
     }
-    pop = double.parse(json['pop'].toString());
+    pop = Helpers.doubleParser(json['pop']);
     rain = json['rain'] != null ? Rain.fromJson(json['rain']) : null;
   }
 

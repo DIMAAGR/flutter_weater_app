@@ -55,10 +55,10 @@ class Daily {
     feelsLike = json['feels_like'] != null ? FeelsLike.fromJson(json['feels_like']) : null;
     pressure = json['pressure'];
     humidity = json['humidity'];
-    dewPoint = json['dew_point'];
-    windSpeed = json['wind_speed'];
+    dewPoint = double.parse(json['dew_point'].toString());
+    windSpeed = double.parse(json['wind_speed'].toString());
     windDeg = json['wind_deg'];
-    windGust = json['wind_gust'];
+    windGust = double.parse(json['wind_gust'].toString());
     if (json['weather'] != null) {
       weather = <Weather>[];
       json['weather'].forEach((v) {
@@ -66,8 +66,8 @@ class Daily {
       });
     }
     clouds = json['clouds'];
-    pop = json['pop'];
-    rain = json['rain'];
+    pop = double.parse(json['pop'].toString());
+    rain = double.parse(json['rain'] == null ? '0.0' : json['rain'].toString());
     uvi = double.parse(json['uvi'].toString());
   }
 

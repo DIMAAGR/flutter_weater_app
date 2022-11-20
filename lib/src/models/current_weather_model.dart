@@ -1,3 +1,4 @@
+import 'package:flutter_weater_app/src/core/helpers/helpers.dart';
 import 'package:flutter_weater_app/src/models/weather_model.dart';
 
 class Current {
@@ -35,20 +36,24 @@ class Current {
       this.weather});
 
   Current.fromJson(Map<String, dynamic> json) {
+    // PARSED VALUES
+    temp = Helpers.doubleParser(json['temp']);
+    feelsLike = Helpers.doubleParser(json['feels_like']);
+    dewPoint = Helpers.doubleParser(json['dew_point']);
+    uvi = Helpers.doubleParser(json['uvi']);
+    windSpeed = Helpers.doubleParser(json['wind_speed']);
+    windGust = Helpers.doubleParser(json['wind_gust']);
+    // NOT PARSED VALUES
     dt = json['dt'];
     sunrise = json['sunrise'];
     sunset = json['sunset'];
-    temp = json['temp'];
-    feelsLike = json['feels_like'];
     pressure = json['pressure'];
     humidity = json['humidity'];
-    dewPoint = json['dew_point'];
-    uvi = json['uvi'];
     clouds = json['clouds'];
     visibility = json['visibility'];
-    windSpeed = json['wind_speed'];
     windDeg = json['wind_deg'];
-    windGust = json['wind_gust'];
+
+    // LIST VALUES
     if (json['weather'] != null) {
       weather = <Weather>[];
       json['weather'].forEach((v) {

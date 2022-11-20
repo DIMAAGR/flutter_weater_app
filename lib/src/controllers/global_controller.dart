@@ -21,6 +21,7 @@ class GlobalController extends GetxController {
   final RxBool _isLoading = true.obs;
   final RxDouble _latitude = 0.0.obs;
   final RxDouble _longitude = 0.0.obs;
+  final RxInt _currentIndex = 0.obs;
 
   final Rx<WeatherModel> _weatherModel = WeatherModel().obs;
 
@@ -32,6 +33,7 @@ class GlobalController extends GetxController {
   RxDouble getLatitude() => _latitude;
   RxDouble getLongitude() => _longitude;
   Rx<WeatherModel> getWeatherModel() => _weatherModel;
+  RxInt getIndex() => _currentIndex;
 
   // Dentro do Getx podemos adicionar ao controller funções de init e close.
 
@@ -47,6 +49,8 @@ class GlobalController extends GetxController {
     if (_isLoading.isTrue) {
       await getLocation();
       await getWeatherApiData();
+    } else {
+      getIndex();
     }
 
     super.onInit();

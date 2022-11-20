@@ -1,10 +1,12 @@
+import 'package:flutter_weater_app/src/core/helpers/helpers.dart';
+
 class Rain {
   double? d1h;
 
   Rain({this.d1h});
 
   Rain.fromJson(Map<String, dynamic> json) {
-    d1h = json['1h'];
+    d1h = Helpers.doubleParser(json['1h']);
   }
 
   Map<String, dynamic> toJson() {

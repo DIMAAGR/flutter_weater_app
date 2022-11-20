@@ -1,3 +1,5 @@
+import 'package:flutter_weater_app/src/core/helpers/helpers.dart';
+
 class Temp {
   double? day;
   double? min;
@@ -9,12 +11,12 @@ class Temp {
   Temp({this.day, this.min, this.max, this.night, this.eve, this.morn});
 
   Temp.fromJson(Map<String, dynamic> json) {
-    day = double.parse(json['day'].toString());
-    min = double.parse(json['min'].toString());
-    max = double.parse(json['max'].toString());
-    night = double.parse(json['night'].toString());
-    eve = double.parse(json['eve'].toString());
-    morn = double.parse(json['morn'].toString());
+    day = Helpers.doubleParser(json['day']);
+    min = Helpers.doubleParser(json['min']);
+    max = Helpers.doubleParser(json['max']);
+    night = Helpers.doubleParser(json['night']);
+    eve = Helpers.doubleParser(json['eve']);
+    morn = Helpers.doubleParser(json['morn']);
   }
 
   Map<String, dynamic> toJson() {

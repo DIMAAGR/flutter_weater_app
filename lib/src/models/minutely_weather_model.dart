@@ -1,3 +1,5 @@
+import 'package:flutter_weater_app/src/core/helpers/helpers.dart';
+
 class Minutely {
   double? dt;
   double? precipitation;
@@ -5,8 +7,8 @@ class Minutely {
   Minutely({this.dt, this.precipitation});
 
   Minutely.fromJson(Map<String, dynamic> json) {
-    dt = double.parse(json['dt'].toString());
-    precipitation = double.parse(json['precipitation'].toString());
+    dt = Helpers.doubleParser(json['dt']);
+    precipitation = Helpers.doubleParser(json['precipitation']);
   }
 
   Map<String, dynamic> toJson() {
