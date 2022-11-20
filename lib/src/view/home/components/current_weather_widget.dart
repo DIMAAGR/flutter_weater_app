@@ -3,6 +3,8 @@ import 'package:flutter_weater_app/src/core/theme/theme_data.dart';
 import 'package:flutter_weater_app/src/models/weather_model.dart';
 
 class HomeCurrentWeatherWidget extends StatelessWidget {
+  //
+
   // ===========================================================================
   // Controllers & Variables
   // ===========================================================================

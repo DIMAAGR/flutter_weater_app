@@ -7,4 +7,6 @@ class AppThemeTextStylesThemeData {
   TextStyle temperature = TextStyle(color: AppTheme.colors.textColorBlack, fontSize: 68, fontWeight: FontWeight.w600);
   TextStyle description = const TextStyle(color: Colors.grey, fontSize: 14, fontWeight: FontWeight.w400);
   TextStyle descritpionSubtitle = const TextStyle(fontSize: 12, fontWeight: FontWeight.w400);
+  TextStyle nextDays = TextStyle(color: AppTheme.colors.textColorBlack, fontSize: 17);
+  TextStyle week = TextStyle(color: AppTheme.colors.textColorBlack, fontSize: 13);
 }

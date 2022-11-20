@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_weater_app/src/controllers/global_controller.dart';
 import 'package:flutter_weater_app/src/core/theme/theme_data.dart';
 import 'package:flutter_weater_app/src/view/home/components/current_weather_widget.dart';
+import 'package:flutter_weater_app/src/view/home/components/daily_weather_widget.dart';
 import 'package:flutter_weater_app/src/view/home/components/header_widget.dart';
 import 'package:flutter_weater_app/src/view/home/components/hourly_weather_widget.dart';
 import 'package:get/get.dart';
@@ -59,6 +60,7 @@ class _HomeViewState extends State<HomeView> {
                   HomeCurrentWeatherWidget(model: controller.getWeatherModel().value),
                   const SizedBox(height: 20),
                   HomeHourlyWeatherWidget(model: controller.getWeatherModel().value),
+                  HomeViewDailyWeatherWidget(model: controller.getWeatherModel().value),
                 ],
               ),
       ),

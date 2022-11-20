@@ -1,4 +1,4 @@
-import 'dart:developer';
+// ignore_for_file: unnecessary_overrides
 
 import 'package:flutter_weater_app/src/models/weather_model.dart';
 import 'package:flutter_weater_app/src/repositories/repository/fetch_weather_data.dart';
