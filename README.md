@@ -27,12 +27,12 @@ Projeto criado para enriquecer o portifólio e aprender novas features. O respec
 ### Imagens
 
 <div align="center">
-    <img src="/images/1.jpg" width="400px"</img> 
-    <img src="/images/2.jpg" width="400px"</img> 
+    <img src="/images/1.png" width="400px"</img> 
+    <img src="/images/2.png" width="400px"</img> 
 </div>
 <div align="center">
-    <img src="/images/3.jpg" width="400px"</img> 
-    <img src="/images/4.jpg" width="400px"</img> 
+    <img src="/images/3.png" width="400px"</img> 
+    <img src="/images/4.png" width="400px"</img> 
 </div>
 
 ------------------------
