@@ -67,7 +67,8 @@ class HomeViewDailyWeatherWidget extends StatelessWidget {
                 ],
               ),
             ),
-            Container(height: 1, color: AppTheme.colors.dividerLine)
+            Container(height: 1, color: AppTheme.colors.dividerLine),
+            const SizedBox(height: 10),
           ],
         ),
       ),

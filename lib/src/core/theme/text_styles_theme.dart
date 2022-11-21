@@ -9,4 +9,5 @@ class AppThemeTextStylesThemeData {
   TextStyle descritpionSubtitle = const TextStyle(fontSize: 12, fontWeight: FontWeight.w400);
   TextStyle nextDays = TextStyle(color: AppTheme.colors.textColorBlack, fontSize: 17);
   TextStyle week = TextStyle(color: AppTheme.colors.textColorBlack, fontSize: 13);
+  TextStyle feelsLike = TextStyle(fontSize: 14, height: 0.8, color: AppTheme.colors.textColorBlack, fontWeight: FontWeight.w400);
 }

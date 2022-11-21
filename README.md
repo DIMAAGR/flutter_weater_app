@@ -19,6 +19,9 @@ Projeto criado para enriquecer o portifólio e aprender novas features. O respec
  - http
  - Sleek Circular Slider
  - Google Fonts
+ - Push and Pull
+ - Repository Pattern
+ - 
  
 ------------------------
 
