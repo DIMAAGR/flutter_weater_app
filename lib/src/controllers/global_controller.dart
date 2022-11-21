@@ -73,6 +73,9 @@ class GlobalController extends GetxController {
   Future<void> getLocation() async {
     //
 
+    // Check isLoadingValue
+    if (_isLoading.value == false) _isLoading.value = true;
+
     bool isServiceEnabled;
     LocationPermission locationPermission;
 
