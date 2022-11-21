@@ -21,8 +21,20 @@ Projeto criado para enriquecer o portifólio e aprender novas features. O respec
  - Google Fonts
  - Push and Pull
  - Repository Pattern
- - 
  
+------------------------
+
+### Imagens
+
+<div align="center">
+    <img src="/images/1.jpg" width="400px"</img> 
+    <img src="/images/2.jpg" width="400px"</img> 
+</div>
+<div align="center">
+    <img src="/images/3.jpg" width="400px"</img> 
+    <img src="/images/4.jpg" width="400px"</img> 
+</div>
+
 ------------------------
 
 ### Sobre o GetX
